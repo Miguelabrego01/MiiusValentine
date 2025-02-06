@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6e6;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #e60000;
+    }
+    .message {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .final-message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff4d4d;
+    }
+    .fruit-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .fruit-button {
+      display: inline-block;
+      text-decoration: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .fruit-button img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .fruit-button img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Please show this message to your mom and dad if you think it's appropriate</h1>
+  <div class="message">
+    <p>
+      저는 한국에서 머무르는 동안 베풀어주신 친절과 환대에 깊이 감사드립니다. 비록 제가 완전히 낯선 외국인이었음에도 불구하고, 따뜻하게 맞아주시고 베풀어주신 친절과 너그러움에 진심으로 감사드립니다. 따님은 제가 아는 가장 놀라운 분이며, 저는 언제나 그녀를 소중히 여기고, 그녀가 제 최우선이라는 것을 보여드릴 것을 약속드립니다. 아름다운 가정을 이루신 여러분을 만나 뵐 수 있어 정말 행운이었습니다. 다시 한번 모든 것에 감사드립니다.
+    </p>
+  </div>
+  <div class="final-message">
+    Finally I wanted to buy some fruit for your family again so please have your mom select her favorite ㅋㅋㅋㅋㅋㅋㅋㅋ
+  </div>
+  
+  <div class="fruit-container">
+    <button class="fruit-button" onclick="saveFruitOption('Fruit 1')">
+      <img src="https://via.placeholder.com/150?text=Fruit+1" alt="Fruit 1">
+    </button>
+    <button class="fruit-button" onclick="saveFruitOption('Fruit 2')">
+      <img src="https://via.placeholder.com/150?text=Fruit+2" alt="Fruit 2">
+    </button>
+    <button class="fruit-button" onclick="saveFruitOption('Fruit 3')">
+      <img src="https://via.placeholder.com/150?text=Fruit+3" alt="Fruit 3">
+    </button>
+    <button class="fruit-button" onclick="saveFruitOption('Fruit 4')">
+      <img src="https://via.placeholder.com/150?text=Fruit+4" alt="Fruit 4">
+    </button>
+  </div>
+
+  <script>
+    function saveFruitOption(fruit) {
+      localStorage.setItem('selectedFruit', fruit);
+      alert("You picked " + fruit + "! Your choice has been saved.");
+    }
+  </script>
+</body>
+</html>
+

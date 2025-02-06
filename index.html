@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valentine's Day Surprise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6e6;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden; /* Hide overflow from animated hearts */
+    }
+    img {
+      max-width: 60%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    button {
+      margin: 20px 10px 0;
+      padding: 15px 25px;
+      font-size: 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e60000;
+    }
+    /* Heart container styles */
+    .heart-container {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart-container.left {
+      left: 0;
+    }
+    .heart-container.right {
+      right: 0;
+    }
+    /* Heart element styles */
+    .heart {
+      position: absolute;
+      top: -50px; /* Start above the viewport */
+      font-size: 24px;
+      color: #ff4d4d;
+      animation: drop linear infinite;
+    }
+    /* Keyframes for falling hearts */
+    @keyframes drop {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="IMG_3431.JPG" alt="Valentine's Day Image">
+  <p>Hwang Hayeon will you be my Valentine??</p>
+  <button onclick="window.location.href='list.html'">yes of course! 🥺❤️</button>
+  <button onclick="window.location.href='list.html'">ABSOLUTELY!! 😈❤️</button>
+
+  <!-- Containers for falling hearts -->
+  <div class="heart-container left"></div>
+  <div class="heart-container right"></div>
+
+  <script>
+    // Function to create falling hearts within a given container
+    function createHearts(container, count) {
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.textContent = "♥";
+        // Random horizontal position within the container (0 to 100px)
+        heart.style.left = Math.random() * 100 + 'px';
+        // Randomize animation delay (0 to 5s) and duration (3 to 6s)
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+        container.appendChild(heart);
+      }
+    }
+    // Create 20 hearts for each side
+    createHearts(document.querySelector('.heart-container.left'), 20);
+    createHearts(document.querySelector('.heart-container.right'), 20);
+  </script>
+</body>
+</html>
+
